@@ -7,15 +7,16 @@ const scanDir = () => {
     console.log('Enter -1 to quit');
     // Template name
     const templateName = readline.question('\nEnter template name: ');
-    if (templateName.trim() == -1) return;
+    if (templateName == -1) {
+        console.log('\nNo template created');
+        return;
+    }
     
     // List of files to be ignored
     let ignoredFiles = [];
     while(true) {
-        let fileName = readline.question('Enter file/dir to be ignored: ', {
-            keepWhitespace: true
-        })
-        if (fileName.trim() == -1) break;
+        let fileName = readline.question('Enter file/dir to be ignored: ');
+        if (fileName == -1) break;
         ignoredFiles.push(fileName);
     }
 
@@ -51,7 +52,7 @@ const scanDir = () => {
 }
 
 // A recursive function which will generate code template
-// It checks if each item is a file or dir
+// It checks if each item is a file or directory
 // It will generate template for a file
 // It will recursively call itself for a directory
 // Takes 3 params, files - list of files in a particular directory, 

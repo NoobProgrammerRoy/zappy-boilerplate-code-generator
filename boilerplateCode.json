@@ -55,5 +55,34 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "C Template",
+        "program": [
+            {
+                "file": "app.c",
+                "code": [
+                    "#include<stdio.h>",
+                    "",
+                    "int main() {",
+                    "\tprintf(\"Hello World\");",
+                    "\treturn 0;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "PHP Template",
+        "program": [
+            {
+                "file": "index.php",
+                "code": [
+                    "<?php",
+                    "echo \"Hello World\";",
+                    "?>"
+                ]
+            }
+        ]
     }
 ]

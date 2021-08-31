@@ -6,22 +6,22 @@ const readline = require('readline-sync');
 // Function to generate boilerplate code using JSON templates
 const generateCode = () => {
     // Read all templates as a string
-    const fileString = fs.readFileSync(path.join(__dirname, 'boilerplateCode.json'), {
+    const templateString = fs.readFileSync(path.join(__dirname, 'boilerplateCode.json'), {
         encoding: 'utf8'
     });
     
     // Convert string into array of templates
-    const fileList = JSON.parse(fileString);
+    const templateList = JSON.parse(templateString);
     
     // Get names of all templates
-    const fileNames = fileList.map(file => file.name); 
+    const templateNames = templateList.map(file => file.name); 
 
     // Select menu for the templates
-    const fileIndex = readline.keyInSelect(fileNames, 'Select a template');
+    const templateIndex = readline.keyInSelect(templateNames, 'Select a template');
 
-    if (fileIndex > -1) {
-        // Get required template
-        const files = fileList[fileIndex];
+    if (templateIndex > -1) {
+        // Get required template and its files
+        const files = templateList[templateIndex];
     
         const dir = readline.question('Enter project name : ');
         // Generate boilerplate code for the template
