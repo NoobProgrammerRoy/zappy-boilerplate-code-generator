@@ -62,21 +62,21 @@ const createTemplate = (files, program, dir) => {
         files.forEach(file => {
             // For directory
             if (fs.lstatSync(path.join(__dirname, dir, file)).isDirectory()) {
-                // Editing here
                 const fileList = fs.readdirSync(path.join(__dirname, dir, file));
-                // createTemplate(fileList, program, dir + '/' + file);
                 createTemplate(fileList, program, dir == '' ? file : dir + '/' + file);
             } 
             // For files
             else {
-                let code = fs.readFileSync(path.join(__dirname, dir, file), {
-                    encoding: 'utf8'
-                });
-                program.push({
-                    // file: (dir + '/' + file).trim(),
-                    file: (dir == '' ? file : dir + '/' + file).trim(),
-                    code: code.split('\n')
-                });
+                // Checks if file does not belong to ./git directory
+                if (!dir.includes('.git')) {
+                    let code = fs.readFileSync(path.join(__dirname, dir, file), {
+                        encoding: 'utf8'
+                    });
+                    program.push({
+                        file: (dir == '' ? file : dir + '/' + file).trim(),
+                        code: code.split('\n')
+                    });
+                }
             }
         });
     } catch (err) {
