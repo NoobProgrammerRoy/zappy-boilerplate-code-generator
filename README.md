@@ -7,4 +7,5 @@ for  creating templates.
 ## Features
 - Create code templates - using CLI as well as by scanning project directories.
 - Generate boilerplate code.
-- REST API for sharing code templates (Work in Progress)
+- REST API for sharing code templates (Work in Progress).
+- Run globally as NPM package.
