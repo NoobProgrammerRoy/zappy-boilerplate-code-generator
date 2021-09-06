@@ -1,8 +1,10 @@
-Zappy - Boilerplate Code Generator
+# Zappy - Boilerplate Code Generator
 
-TODO
-- Fix createTemplate(multi line input for code and seperate dir) - DONE
-- Add Copy existing template/dir functionality - DONE
-- CLI UI improvements - DONE
-- Error Checking, code improvements and bug fixes - DONE
-- NPM Package and CLI
+Zappy is a CLI tool that allows users to create custom code templates and
+generate boilerplate code. Features a CLI based workflow with multiple options
+for  creating templates.
+
+## Features
+- Create code templates - using CLI as well as by scanning project directories.
+- Generate boilerplate code.
+- REST API for sharing code templates (Work in Progress)
